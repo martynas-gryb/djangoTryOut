@@ -1,0 +1,25 @@
+{% if question %}
+<h1>{{ question.pub_date }}</h1>
+<h2>{{ question.question_text }}</h2>
+<ul>
+{% for c in choices %}
+    <li>
+        <p>
+            Restaurant #{{c.restaurant.pk}}. View menu:
+            <a href="/view_menu/{{c.restaurant.pk}}">{{c.restaurant.name}}</a>
+        </p>
+    </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<h2>Supported apis</h2>
+<ul>
+    <li> /create_restaurant/@restaurant_name </li>
+    <li> /create_employee/@employee_name </li>
+    <li> /menu/@restaurant_id (menu upload form) </li>
+    <li> /view_menu/@menu_id (view/download menu) </li>
+    <li> /winner </li>
+    <li>< /vote/@restaurant_id/@employee_id </li>
+
+</ul>
