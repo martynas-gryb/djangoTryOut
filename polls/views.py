@@ -134,8 +134,9 @@ def todays_result(request):
         .first()
 
     logger.info("getting todays results from {}".format(get_client_ip(request)))
-
-    return HttpResponse("Winner is {} with {} votes".format(
+    text = "Winner is {} with {} votes".format(
         Menu.objects.get(pk=winner["menu"]).restaurant,
         winner["vote_count"]
-    ))
+    )
+    response = HttpResponse(text)
+    return response

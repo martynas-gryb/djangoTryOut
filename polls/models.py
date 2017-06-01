@@ -17,7 +17,7 @@ class Restaurant(models.Model):
 
 
 class Employee(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, unique=True)
 
 
 class Menu(models.Model):
