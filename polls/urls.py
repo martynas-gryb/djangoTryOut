@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^view_menu/(?P<m_id>[0-9]+)$', views.download_menu, name='dwnl_menu'),
     url(r'^vote/(?P<r_id>[0-9]+)/(?P<e_id>[0-9]+)$', views.vote_for_restaurant_menu, name='vote_for'),
     url(r'^winner/$', views.todays_result, name='winner'),
+    url(r'', views.default, name='winner'),
 ]
